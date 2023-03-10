@@ -1,5 +1,5 @@
-// 랜덤 번호 지정
-// 유저가 번호를 입력한다 그리고 go 라는 버튼을 누름
+// 랜덤 번호 지정 o
+// 유저가 번호를 입력한다 그리고 go 라는 버튼을 누름 o
 // 만약에 유저가 랜덤번호를 맞추면, 맞췄습니다!
 // 랜덤 번호가 < 유저번호 Down
 // 랜덤 번호가 > 유저번호 Up
@@ -10,6 +10,11 @@
 
 
 let computerNumber = 0
+let playButton = document.getElementById("play-btn");
+let userInput = document.getElementById("user-input");
+let resultArea = document.getElementById("result-area");
+
+playButton.addEventListener("click",play)
 
 function pickRandomNum() {
     computerNumber = Math.floor(Math.random() * 100) + 1;
@@ -19,6 +24,21 @@ function pickRandomNum() {
     //이 모든걸 해주면 computerNumber는 0~99까지의 랜덤수를 반환
     //때문에 +1을 해줌
     console.log("정답", computerNumber);
+}
+
+function play() {
+    let userValue = userInput.value;
+    if (userValue < computerNumber) {
+        resultArea.textContent = "UP!!!"
+        console.log("UP!!!")
+    } else if (userValue > computerNumber) {
+        resultArea.textContent = "DOWN!!!"
+        console.log("DOWN!!")
+    } else {
+        resultArea.textContent = "맞췄습니다 ~!"
+        console.log("맞췄습니다 ~!")
+
+    }
 }
 
 pickRandomNum()

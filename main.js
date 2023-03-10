@@ -7,3 +7,13 @@
 //5번의 기회를 다 쓰면 게임이 끝난다 (더이상 추측 불가, 버튼이 disable)
 //유저가 1~100 범위 밖의 숫자를 입력하면 알려준다. 기회를 깎지 않는다.
 // 유저가 이미 입력한 숫자를 또 입력하면, 알려준다. 기회를 깎지 않는다.
+
+
+let computerNumber = 0
+
+function pickRandomNum() {
+    computerNumber = Math.floor(Math.random() * 100);
+    console.log("정답", computerNumber);
+}
+
+pickRandomNum()

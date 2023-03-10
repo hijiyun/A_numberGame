@@ -12,7 +12,12 @@
 let computerNumber = 0
 
 function pickRandomNum() {
-    computerNumber = Math.floor(Math.random() * 100);
+    computerNumber = Math.floor(Math.random() * 100) + 1;
+    //Math.random() => 0~1 까지의 랜덤 수를 반환 ex) 0.234234
+    //그래서 100을 곱해줌으로써 소수점 앞자리가 숫자로나오게 만듦
+    //소수점 뒤에있는 수들을 날리는 함수 => Math.floor()
+    //이 모든걸 해주면 computerNumber는 0~99까지의 랜덤수를 반환
+    //때문에 +1을 해줌
     console.log("정답", computerNumber);
 }
 
